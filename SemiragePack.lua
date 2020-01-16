@@ -4,7 +4,7 @@ local SCRIPT_FILE_ADDR = "https://wg1341850.virtualuser.de/aw-lua/SemiragePack.l
 local VERSION_FILE_ADDR = "https://wg1341850.virtualuser.de/aw-lua/version.txt";
 local SCRIPT_FILE_ADDR_GIT = "https://raw.githubusercontent.com/stormops/Aimware-SemiragePack/master/SemiragePack.lua";
 local VERSION_FILE_ADDR_GIT = "https://raw.githubusercontent.com/stormops/Aimware-SemiragePack/master/version.txt";
-local VERSION_NUMBER = "1";
+local VERSION_NUMBER = 1.7;
 last_update_sent = globals.TickCount();
 last_update_retrieved = globals.TickCount();
 version_check_done = false;
@@ -50,8 +50,8 @@ function updateEventHandler()
         end
 
         version_check_done = true;
-        local version = http.Get(VERSION_FILE_ADDR);
-		local version_git = http.Get(VERSION_FILE_ADDR_GIT);
+        local version = tonumber(http.Get(VERSION_FILE_ADDR));
+		local version_git = tonumber(http.Get(VERSION_FILE_ADDR_GIT));
 		if (version == "") then
 			if (version_git > VERSION_NUMBER) then
 				update_available = true;
