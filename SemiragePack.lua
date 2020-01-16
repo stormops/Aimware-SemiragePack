@@ -4,7 +4,7 @@ local SCRIPT_FILE_ADDR = "https://wg1341850.virtualuser.de/aw-lua/SemiragePack.l
 local VERSION_FILE_ADDR = "https://wg1341850.virtualuser.de/aw-lua/version.txt";
 local SCRIPT_FILE_ADDR_GIT = "https://raw.githubusercontent.com/stormops/Aimware-SemiragePack/master/SemiragePack.lua";
 local VERSION_FILE_ADDR_GIT = "https://raw.githubusercontent.com/stormops/Aimware-SemiragePack/master/version.txt";
-local VERSION_NUMBER = "1.0.7";
+local VERSION_NUMBER = "1";
 last_update_sent = globals.TickCount();
 last_update_retrieved = globals.TickCount();
 version_check_done = false;
@@ -73,7 +73,6 @@ function updateEventHandler()
 			print("version: "..version)
 			print("version_git: "..version_git)
 		else
-			update_available = false;
 			print("")
 			print("[Error]")
 			print("version: "..version)
